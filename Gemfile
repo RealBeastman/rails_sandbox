@@ -64,4 +64,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  # Rspec for testing
+
+  # Factory-bot for test data creation
 end
+
+# Devise for User management
+gem 'devise', '~> 4.9'
