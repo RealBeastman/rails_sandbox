@@ -72,4 +72,5 @@ end
 # Devise for User management
 gem 'devise', '~> 4.9'
 
+# Tailwind for styling
 gem "tailwindcss-rails", "~> 3.0"
