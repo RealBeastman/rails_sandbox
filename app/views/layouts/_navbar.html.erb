@@ -12,7 +12,7 @@
             <summary class=""><%= current_user.email %></summary>
             <ul class="bg-base-200 rounded-t-none p-2 w-full">
               <li><%= link_to "Edit Account", edit_user_registration_path %></li>
-              <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <li class="text-center"><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             </ul>
           </details>
         <% else %>
