@@ -47,6 +47,9 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "rspec-rails", "~> 7.0.0"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
@@ -64,9 +67,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  # Rspec for testing
-
-  # Factory-bot for test data creation
 end
 
 # Devise for User management
@@ -74,3 +74,6 @@ gem 'devise', '~> 4.9'
 
 # Tailwind for styling
 gem "tailwindcss-rails", "~> 3.0"
+
+# Dry Validation for param validation
+gem "dry-validation", "~> 1.10"
