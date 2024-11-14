@@ -8,10 +8,19 @@
     <ul class="menu menu-horizontal px-1">
       <li>
         <details>
-          <summary>Account</summary>
-          <ul class="bg-base-200 rounded-t-none p-2">
-            <li><%= link_to "Sign In", "#" %></li>
-            <li><%= link_to "Sign Up", "#" %></li>
+          <% if current_user %>
+            <summary class=""><%= current_user.email %></summary>
+          <% else %>
+            <summary class="">Account</summary>
+          <% end %>
+          <ul class="bg-base-200 rounded-t-none p-2 w-full">
+            <% if current_user %>
+              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+              <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign In", new_user_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <% end %>
           </ul>
         </details>
       </li>
