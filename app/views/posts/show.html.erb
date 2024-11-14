@@ -1,10 +1,14 @@
 <div class="mx-auto">
   <div class="mx-auto">
     <%= render @post %>
-    <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-accent mt-2" %>
+    <% if current_user %>
+      <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-accent mt-2" %>
+    <% end %>
     <%= link_to "Back to posts", posts_path, class: "btn btn-primary mt-2" %>
-    <div class="inline-block ml-2 float-right">
-      <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-error mt-2" %>
-    </div>
+    <% if current_user %>
+      <div class="inline-block ml-2 float-right">
+        <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-error mt-2" %>
+      </div>
+    <% end %>
   </div>
 </div>
