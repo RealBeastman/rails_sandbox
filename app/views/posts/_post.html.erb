@@ -1,7 +1,8 @@
 <div id="<%= dom_id post %>" class="border-2 border-white bg-base-300 rounded-lg p-5 mt-10">
   <h1 class="text-3xl font-bold my-2"><%= post.title %></h1>
-  <hr></hr>
-<p class="my-5 text-white">
-  <%= post.body %>
-</p>
+  <i class="text-xs">Posted by: <%= post.user.email %></i>
+  <hr/>
+  <p class="my-5 text-white">
+    <%= post.body %>
+  </p>
 </div>
