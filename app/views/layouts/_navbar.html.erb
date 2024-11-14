@@ -7,22 +7,18 @@
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li>
-        <details>
-          <% if current_user %>
+        <% if current_user %>
+          <details>
             <summary class=""><%= current_user.email %></summary>
-          <% else %>
-            <summary class="">Account</summary>
-          <% end %>
-          <ul class="bg-base-200 rounded-t-none p-2 w-full">
-            <% if current_user %>
+            <ul class="bg-base-200 rounded-t-none p-2 w-full">
               <li><%= link_to "Edit Account", edit_user_registration_path %></li>
               <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Sign In", new_user_session_path %></li>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <% end %>
-          </ul>
-        </details>
+            </ul>
+          </details>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
       </li>
     </ul>
   </div>
