@@ -3,7 +3,7 @@ module Posts
     params do
       required(:user_id).filled
       required(:title).filled(:string, format?: /^[a-zA-Z0-9 ,.'-]+$/)
-      required(:body).filled(:string, format?: /^[\w\s\p{P}]+$/)
+      required(:body).filled(:string, format?: /^[a-zA-Z0-9 ,.'-]+$/)
     end
 
     rule(:user_id) do
